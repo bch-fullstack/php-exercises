@@ -6,6 +6,13 @@
 
   if(!isset($_SESSION['favorites'])) { $_SESSION['favorites'] = []; }
 
+  // A handy function to remove a single element from an array
+  function array_remove($element, $array) {
+    $index = array_search($element, $array);
+    array_splice($array, $index, 1);
+    return $array;
+  }
+
   function is_ajax_request() {
     return isset($_SERVER['HTTP_X_REQUESTED_WITH']) &&
       $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpRequest';
@@ -20,8 +27,8 @@
     $id = $matches[1];
 
     // store in $_SESSION['favorites']
-    if(!in_array($id, $_SESSION['favorites'])) {
-      $_SESSION['favorites'][] = $id;
+    if(in_array($id, $_SESSION['favorites'])) {
+      $_SESSION['favorites'] = array_remove($id, $_SESSION['favorites']);
     }
 
     echo 'true';

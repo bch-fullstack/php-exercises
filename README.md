@@ -5,11 +5,15 @@ The task is to implement a Add to favourite feature to the sample page located a
 When user clicks on the **favourite button** of the post, the post is marked as one of the favourites
 and this selection is saved to user page session and is considered during next pageloads
 
-### Useful reads for tackling this challenge   
+### Useful reads for tackling this challenge
+
 *PHP - Sessions*: https://www.tutorialspoint.com/php/php_sessions.htm
 *Detection of AJAX request*: https://css-tricks.com/snippets/php/detect-ajax-request/
 
+Some people will wonder what is going on after double clicking on their PHP files, we have already talked about this but anyway you will find your answer here: https://www.techwalla.com/articles/how-to-run-a-php-file-in-xampp 
+
 ### Challenge breakdown
+
 The challenge question can be broken down into smaller tasks as following, go through each step to complete the challenge:
 
 1. Understand the page structure and how to capture click events on favourite button, use jQuery if needed
